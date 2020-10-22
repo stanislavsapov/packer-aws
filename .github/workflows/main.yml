@@ -11,7 +11,7 @@ jobs:
         uses: ./
         with:
           templateFile: 'template.json'
-          varFile: 'vars.json'
+          variablesFile: 'vars.json'
           workingDir: '.'
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
