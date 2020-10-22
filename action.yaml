@@ -1,0 +1,27 @@
+# action.yml
+name: 'Packer build'
+description: 'Launch packer build'
+inputs:
+  templateFile:
+    description: "Packer template file"
+    required: true
+    default: "template.json"
+  variablesFile:
+    description: "Variables files"
+    required: true
+    default: "vars.json"
+  workingDir:
+    description: 'Directory with template and var'
+    required: true
+    default: "."
+  aws_access_key:
+    description: 'AWS access key'
+    default: ""
+    required: true
+  aws_secret_key:
+    description: 'AWS access key'
+    default: ""
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
