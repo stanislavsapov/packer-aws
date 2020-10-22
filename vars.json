@@ -1,0 +1,7 @@
+{
+    "account": "stan",
+    "ami_name": "golden",
+    "version": "0.01",
+    "aws_region": "us-east-1",
+    "region": "oh"
+}
