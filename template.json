@@ -46,6 +46,12 @@
     ],
     "provisioners": [
       {
+        "type": "shell",
+        "inline": [
+            "mkdir -p /srv/salt/salt /srv/salt/pillar"
+        ]
+      },
+      {
         "type": "salt-masterless",
         "local_state_tree": "/srv/salt/salt",
         "local_pillar_roots": "/srv/salt/pillar",
