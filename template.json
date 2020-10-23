@@ -29,17 +29,26 @@
         "ssh_username": "ubuntu",
         "ami_name": "{{user `ami_name`}}-{{user `version`}}",
         "tags": {
-          "Name": "{{user `ami_name`}}-{{user `version`}}",
+          "Name": "{{user `ami_name`}}-{{user `version`}}-{{timestamp}}",
           "OS_Version": "Ubuntu",
           "Release": "xenial",
-          "Base_AMI_Name": "{{ .SourceAMIName }}"
+          "Base_AMI_Name": "{{ .SourceAMIName }}",
+          "creation_date": "{{isotime \"Mon Jan _2 15:04:05 UTC 2006\"}}"
         },
         "snapshot_tags": {
-            "Name": "{{user `ami_name`}}-{{user `version`}}",
+            "Name": "{{user `ami_name`}}-{{user `version`}}-{{timestamp}}",
             "OS_Version": "Ubuntu",
             "Release": "xenial",
-            "Base_AMI_Name": "{{ .SourceAMIName }}"
+            "Base_AMI_Name": "{{ .SourceAMIName }}",
+            "creation_date": "{{isotime \"Mon Jan _2 15:04:05 UTC 2006\"}}"
           }
+      }
+    ],
+    "post-processors": [
+      {
+        "type": "manifest",
+        "output": "manifest.json",
+        "strip_path": true
       }
     ]
   }
