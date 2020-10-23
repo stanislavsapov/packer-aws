@@ -19,11 +19,11 @@ fi
 
 set +e
 # Run packer validate
-VALIDATE_OUTPUT=$(sh -c "packer validate -color=false -var-file=${INPUT_VARIABLESFILE} ${INPUT_TEMPLATEFILE}" 2>&1)
+VALIDATE_OUTPUT=$(sh -c "packer validate -var-file=${INPUT_VARIABLESFILE} ${INPUT_TEMPLATEFILE}" 2>&1)
 VALIDATE_SUCCESS=$?
 echo "$VALIDATE_OUTPUT"
 
-if [[VALIDATE_SUCCESS -ne 0]]; then
+if [[ "$VALIDATE_SUCCESS" -ne 0 ]]; then
     echo "Packer validate has falied"
     exit 1
 fi
