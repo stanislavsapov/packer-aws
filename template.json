@@ -52,6 +52,12 @@
         ]
       },
       {
+        "type": "shell",
+        "inline": [
+            "ls -la /srv/ && ls -la /srv/salt"
+        ]
+      },
+      {
         "type": "salt-masterless",
         "local_state_tree": "/srv/salt/salt",
         "local_pillar_roots": "/srv/salt/pillar",
