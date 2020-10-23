@@ -44,6 +44,14 @@
           }
       }
     ],
+    "provisioners": [
+      {
+        "type": "salt-masterless",
+        "local_state_tree": "/srv/salt/salt",
+        "local_pillar_roots": "/srv/salt/pillar",
+        "bootstrap_args": "-L -i {{user `minion_id`}} stable {{user `salt-version`}}"
+      }
+    ],
     "post-processors": [
       {
         "type": "manifest",

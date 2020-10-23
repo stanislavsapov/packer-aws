@@ -3,5 +3,7 @@
     "ami_name": "golden",
     "version": "0.01",
     "aws_region": "us-east-1",
-    "region": "oh"
+    "region": "oh",
+    "salt-version": "3000.3",
+    "minion_id": "baseminion"
 }
